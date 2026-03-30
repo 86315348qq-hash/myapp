@@ -22,22 +22,23 @@
         }
         h2 { color: #333; font-size: 20px; margin-bottom: 10px; }
         p { color: #666; font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
-        .btn { 
-            display: block; 
-            width: 100%;
-            box-sizing: border-box;
-            padding: 14px 20px; 
-            background-color: #07c160; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-size: 16px; 
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
+        
+        /* 新增的链接展示框样式 */
+        .link-box {
+            background-color: #f8f9fa;
+            border: 1px dashed #07c160;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333;
+            word-break: break-all; /* 保证长链接自动换行 */
             margin-bottom: 20px;
+            text-align: left;
+            /* 优化手机端长按选中的体验 */
+            -webkit-user-select: text;
+            user-select: text;
         }
-        .btn:active { background-color: #06ad56; }
+
         .steps {
             text-align: left;
             background: #f8f9fa;
@@ -55,39 +56,17 @@
 <body>
     <div class="container">
         <h2>获取小程序体验权限</h2>
-        <p>由于个体开发者无法上线地图类小程序，只能使用体验测试版（链接有效期仅7日），如需预览请复制后台提供的体验链接：</p>
+        <p>由于个体开发者无法上线地图类小程序，只能使用体验测试版（链接有效期仅7日，所以需要后台定期更新链接），且体验测试版不支持公开，必须申请权限，请复制下方体验链接在微信对话框打开进行预览并申请权限，研究人员会尽快通过：</p>
         
-        <!-- 点击按钮触发复制 -->
-        <button class="btn" onclick="copyLink()">1. 点击复制体验链接</button>
+        <!-- 直接展示链接供用户手动复制 -->
+        <div class="link-box">
+            https://open.weixin.qq.com/sns/getexpappinfo?appid=wx48f5e04fdde4a486&path=pages%2Findex%2Findex.html&token=740ab363087a49c88b754cbef3481f6c#wechat-redirect
+        </div>
         
         <div class="steps">
             <ol>
-                <li>链接需在微信对话框打开。</li>
-                <li>微信小程序体验测试版不支持公开，如需预览只能申请权限，研究人员会尽快通过。</li>
             </ol>
         </div>
     </div>
-
-    <script>
-        // 请把下面单引号里的内容，换成你真实的微信体验版长链接！
-        const realWechatLink = 'https://open.weixin.qq.com/sns/getexpappinfo?appid=wx48f5e04fdde4a486&path=pages%2Findex%2Findex.html&token=740ab363087a49c88b754cbef3481f6c#wechat-redirect';
-
-        function copyLink() {
-            // 创建一个临时的输入框来执行复制操作
-            const tempInput = document.createElement('input');
-            tempInput.value = realWechatLink;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            
-            try {
-                document.execCommand('copy');
-                alert('✅ 链接复制成功！\n\n请返回微信聊天窗口，粘贴并发送该链接，然后直接点击即可申请体验。');
-            } catch (err) {
-                alert('复制失败，请手动长按复制链接');
-            }
-            
-            document.body.removeChild(tempInput);
-        }
-    </script>
 </body>
 </html>
