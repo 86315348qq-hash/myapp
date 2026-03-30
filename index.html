@@ -2,11 +2,45 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>正在跳转到小程序...</title>
-    <!-- 请把下面两处 https://你的7天体验链接.com 替换成你真实的链接 -->
-    <meta http-equiv="refresh" content="0;url=https://open.weixin.qq.com/sns/getexpappinfo?appid=wx48f5e04fdde4a486&path=pages%2Findex%2Findex.html&token=740ab363087a49c88b754cbef3481f6c#wechat-redirect">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小程序体验</title>
+    <style>
+        body { 
+            text-align: center; 
+            padding: 50px 20px; 
+            font-family: sans-serif; 
+            background-color: #f7f7f7;
+        }
+        .container {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        h2 { color: #333; font-size: 20px; margin-bottom: 10px; }
+        p { color: #888; font-size: 14px; margin-bottom: 30px; }
+        .btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            background-color: #07c160; /* 微信绿 */
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-size: 16px; 
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <p>正在跳转，请稍候... 如果没有自动跳转，请 <a href="https://open.weixin.qq.com/sns/getexpappinfo?appid=wx48f5e04fdde4a486&path=pages%2Findex%2Findex.html&token=740ab363087a49c88b754cbef3481f6c#wechat-redirect">点击这里</a>。</p>
+    <div class="container">
+        <h2>欢迎体验小程序</h2>
+        <p>请点击下方按钮进入体验版</p>
+        
+        <!-- 注意：请把下面 href="" 里面的网址，换成你微信后台复制出来的真实体验版长链接 -->
+        <a href="https://open.weixin.qq.com/sns/getexpappinfo?appid=wx48f5e04fdde4a486&path=pages%2Findex%2Findex.html&token=740ab363087a49c88b754cbef3481f6c#wechat-redirect" class="btn">点击进入小程序</a>
+        
+    </div>
 </body>
 </html>
